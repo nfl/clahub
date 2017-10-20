@@ -6,7 +6,7 @@ your open source project that's hosted on GitHub.  Contributors digitally sign
 your CLA by signing in with GitHub.  Then, it automatically marks up your pull
 requests based on whether the contributors have all signed your CLA.
 
-Right now it's running at <http://www.clahub.com>
+Right now it's running at <https://www.clahub.com>
 
 I don't intend for this to lead to a proliferation of CLAs.  But when they're
 appropriate, I hope it can reduce the friction of contribution.
@@ -18,7 +18,7 @@ such discussion in [GitHub issues](https://github.com/clahub/clahub/issues).
 
 Build status
 ------------
-[![Build Status](https://secure.travis-ci.org/clahub/clahub.png)](http://travis-ci.org/clahub/clahub)
+[![Build Status](https://secure.travis-ci.org/clahub/clahub.svg)](https://travis-ci.org/clahub/clahub)
 
 What's a CLA?
 -------------
@@ -31,11 +31,11 @@ of contributions to an open-source project.  They generally say that:
 > agreement (typically “as you see fit” or “under an OSI-approved license” or
 > whatever).
 
--- From [_Contributor License Agreements_ by Jacob Kaplan-Moss](http://jacobian.org/writing/contributor-license-agreements/)
+-- From [_Contributor License Agreements_ by Jacob Kaplan-Moss](https://jacobian.org/writing/contributor-license-agreements/)
 
 Here's some more background on CLAs:
 
-* [Wikipedia page](http://en.wikipedia.org/wiki/Contributor_License_Agreement) for CLAs
+* [Wikipedia page](https://en.wikipedia.org/wiki/Contributor_License_Agreement) for CLAs
 * [_A CLA By Any Other Name_ on Groklaw](http://www.groklaw.net/article.php?story=20110524120303815)
 
 Want to choose a CLA?  Harmony Agreements is a web tool that helps you quickly select a CLA:
@@ -62,9 +62,16 @@ You can also specify an HTTP port for local foreman:
 
     GITHUB_KEY=abc123
     GITHUB_SECRET=234897239872394832478
-    GITHUB_LIMITED_KEY=abc123
-    GITHUB_LIMITED_SECRET=234897239872394832478
+    GITHUB_LIMITED_KEY=xyz789
+    GITHUB_LIMITED_SECRET=2390482390482
     PORT=3000
+
+Register for two new GitHub applications, one will be used for project owner signups and one for contributors signups.
+
+You will need to configure the authorization callback URL for each:
+
+* Full access: http://127.0.0.1:3000/auth/github/callback
+* Limited-access signature-only callback: https://127.0.0.1:3000/auth/github_limited/callback
 
 This file is .gitignored so it's private.
 
@@ -137,7 +144,7 @@ Then, you should run the Rails server with the `HOST` environment variable
 set, like `HOST=http://my.fancy.dynamic.host.name rails server`, or set it in `.env`
 if using `foreman`.  This is read in `config/initializers/host.rb`
 
-*Note* that the dynamic hostname you use is saved in the GitHub webhook 
+*Note* that the dynamic hostname you use is saved in the GitHub webhook
 registrations.  If your dynamic hostname changes, you will need to update the
 webhooks in GitHub so that it knows where to send the requests.
 
@@ -148,7 +155,7 @@ See DEPLOY.md for information on deploying.
 License
 ================
 
-See [LICENSE](https://github.com/clahub/clahub/blob/master/LICENSE) for the project license.
+See [LICENSE](https://github.com/clahub/clahub/blob/master/LICENSE.md) for the project license.
 
 The "Clipboard and pencil" graphic used in the homepage logo is
 licensed from iStockPhoto.com:
@@ -156,7 +163,7 @@ licensed from iStockPhoto.com:
 <http://www.istockphoto.com/stock-illustration-16006726-clipboard-and-pencil.php>
 
 The graphic is licensed for a single-seat install and is in use at
-http://www.clahub.com.  It is not licensed for multi-seat use, so any
+https://www.clahub.com.  It is not licensed for multi-seat use, so any
 other installations should purchase a separate license or use a different
 image.
 
